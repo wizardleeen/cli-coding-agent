@@ -1,0 +1,308 @@
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0a0a0a;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #111111;
+  border-bottom: 1px solid #333333;
+  color: #cccccc;
+}
+
+.terminal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.terminal-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #888888;
+}
+
+.file-count {
+  color: #888888;
+}
+
+.status-ready {
+  color: #27ca3f;
+}
+
+.status-processing {
+  color: #ffbd2e;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.terminal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  line-height: 1.5;
+}
+
+.terminal-history {
+  margin-bottom: 12px;
+}
+
+.terminal-entry {
+  margin-bottom: 12px;
+}
+
+.terminal-entry.error .terminal-output {
+  color: #ff6b6b;
+}
+
+.terminal-entry.success .terminal-output {
+  color: #51cf66;
+}
+
+.terminal-entry.system .terminal-output {
+  color: #74c0fc;
+}
+
+.terminal-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.prompt {
+  color: #888888;
+  white-space: nowrap;
+}
+
+.prompt-user {
+  color: #51cf66;
+  font-weight: 500;
+}
+
+.prompt-separator {
+  color: #888888;
+}
+
+.prompt-host {
+  color: #74c0fc;
+  font-weight: 500;
+}
+
+.prompt-path {
+  color: #ffd43b;
+}
+
+.prompt-symbol {
+  color: #ffffff;
+  margin-left: 4px;
+}
+
+.command-text {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.loading-spinner {
+  margin-left: 8px;
+}
+
+.terminal-output {
+  padding-left: 0;
+  color: #cccccc;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: sticky;
+  bottom: 0;
+  background: #0a0a0a;
+  padding-top: 8px;
+}
+
+.terminal-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  padding: 0;
+  caret-color: #ffffff;
+}
+
+.terminal-input-field::placeholder {
+  color: #555555;
+}
+
+.terminal-input-field:disabled {
+  opacity: 0.5;
+}
+
+.input-spinner {
+  margin-left: 8px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #333333;
+  border-radius: 50%;
+  border-top: 2px solid #ffffff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Welcome message styles */
+.welcome-message {
+  margin: 16px 0;
+}
+
+.ascii-art {
+  color: #51cf66;
+  font-family: monospace;
+  margin-bottom: 16px;
+  white-space: pre;
+}
+
+.help-text {
+  color: #cccccc;
+}
+
+.help-text p {
+  margin-bottom: 8px;
+  color: #74c0fc;
+  font-weight: 500;
+}
+
+.help-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.help-text li {
+  padding: 2px 0;
+  color: #cccccc;
+}
+
+.help-text code {
+  color: #ffd43b;
+  background: #1a1a1a;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+/* Command output styles */
+.help-output h3 {
+  color: #74c0fc;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.command-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.command-item {
+  padding: 4px 0;
+  color: #cccccc;
+  border-left: 2px solid #333333;
+  padding-left: 12px;
+}
+
+.command-item code {
+  color: #ffd43b;
+  background: #1a1a1a;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.version-info {
+  color: #74c0fc;
+  line-height: 1.6;
+}
+
+.file-list {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.create-output,
+.generate-output,
+.explain-output,
+.refactor-output,
+.cat-output {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.create-output div,
+.generate-output div,
+.explain-output div,
+.refactor-output div,
+.cat-output div {
+  margin-bottom: 4px;
+}
+
+.error-output {
+  color: #ff6b6b;
+  line-height: 1.6;
+}
+
+.error-output div {
+  margin-bottom: 4px;
+}
+
+.error-output code {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Scrollbar styles for terminal */
+.terminal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+.terminal-content::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
