@@ -1,0 +1,145 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.app-header {
+  background: #1a1a1a;
+  border-bottom: 1px solid #333333;
+  padding: 0;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  height: 40px;
+  user-select: none;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.window-control:hover {
+  opacity: 0.8;
+}
+
+.window-control.close {
+  background: #ff5f56;
+}
+
+.window-control.minimize {
+  background: #ffbd2e;
+}
+
+.window-control.maximize {
+  background: #27ca3f;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.title-icon {
+  font-size: 16px;
+}
+
+.app-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.version {
+  font-size: 12px;
+  color: #888888;
+  background: #2a2a2a;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  background: #111111;
+  border-right: 1px solid #333333;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.resize-handle {
+  width: 4px;
+  background: transparent;
+  cursor: col-resize;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.resize-handle:hover,
+.resize-handle.dragging {
+  background: #333333;
+}
+
+.resize-line {
+  width: 1px;
+  height: 100%;
+  background: #333333;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.resize-handle:hover .resize-line,
+.resize-handle.dragging .resize-line {
+  opacity: 1;
+}
+
+.main-content {
+  background: #0a0a0a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animation for smooth transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom selection styling */
+::selection {
+  background: rgba(0, 122, 204, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: rgba(0, 122, 204, 0.3);
+  color: inherit;
+}
